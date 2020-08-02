@@ -18,7 +18,6 @@ RUN apt-get update \
     php7.4-pdo \
     php7.4-redis \
     php7.4-intl \
-    php7.4-pcntl \
     openssl \
     cron \
     supervisor \
