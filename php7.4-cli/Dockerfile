@@ -9,6 +9,6 @@ RUN apt-get update \
     && apt-get clean
 
 RUN docker-php-ext-configure intl
-RUN docker-php-ext-install zip intl bcmath
+RUN docker-php-ext-install zip intl bcmath gmp pcntl
 
 COPY --from=composer /usr/bin/composer /usr/bin/composer
