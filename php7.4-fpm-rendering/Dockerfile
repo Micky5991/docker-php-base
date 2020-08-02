@@ -6,6 +6,7 @@ RUN sh -c 'echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /
 
 RUN apt-get update \
     && apt-get install -y \
+    gmp-devel \
     php7.4-gmp \
     ffmpeg \
     && rm -rf /var/lib/apt/lists/*
