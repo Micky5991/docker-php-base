@@ -9,6 +9,11 @@ RUN apt-get update \
     libgmp-dev \
     php7.4-gmp \
     ffmpeg \
+    python3-pip \
     && rm -rf /var/lib/apt/lists/*
 
 RUN apt-get clean
+
+RUN pip3 install youtube-dl
+
+RUN youtube-dl --version
