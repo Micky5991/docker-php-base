@@ -1,4 +1,4 @@
-FROM composer:1.10 AS composer
+FROM composer:2.0 AS composer
 FROM php:7.4-cli
 
 RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
