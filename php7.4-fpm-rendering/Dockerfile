@@ -14,4 +14,4 @@ RUN apt-get update \
 
 RUN apt-get clean
 
-RUN pip3 install youtube-dl
+RUN pip3 install youtube_dl
