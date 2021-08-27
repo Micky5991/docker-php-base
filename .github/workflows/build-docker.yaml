@@ -38,6 +38,4 @@ jobs:
           context: ./${{ matrix.image }}
           push: false
           tags: micky5991/docker-php-base:latest-${{ matrix.image }}
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
 
