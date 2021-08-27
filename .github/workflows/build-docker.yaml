@@ -119,7 +119,7 @@ jobs:
           docker image ls -a
 
       - name: Retag docker image (SemVer)
-        if: steps.get_version.outputs.is-semver == true
+        if: steps.get_version.outputs.is-semver == 'true'
         run: |
           docker tag micky5991/docker-php-base:latest-${{ matrix.image }} micky5991/docker-php-base:${{ steps.get_version.outputs.version-without-v }}-${{ matrix.image }}
           docker tag micky5991/docker-php-base:latest-${{ matrix.image }} micky5991/docker-php-base:${{ steps.get_version.outputs.major }}-${{ matrix.image }}
@@ -127,13 +127,13 @@ jobs:
           docker image ls -a
 
       - name: Retag docker image (No SemVer)
-        if: steps.get_version.outputs.is-semver != true
+        if: steps.get_version.outputs.is-semver != 'true'
         run: |
           docker tag micky5991/docker-php-base:latest-${{ matrix.image }} micky5991/docker-php-base:${{ needs.variables.outputs.ref }}-${{ matrix.image }}
           docker image ls -a
 
       - name: Push docker image (SemVer)
-        if: steps.get_version.outputs.is-semver == true
+        if: steps.get_version.outputs.is-semver == 'true'
         run: |
           docker push micky5991/docker-php-base:${{ steps.get_version.outputs.version-without-v }}-${{ matrix.image }}
           docker push micky5991/docker-php-base:${{ steps.get_version.outputs.major }}-${{ matrix.image }}
@@ -141,7 +141,7 @@ jobs:
           docker push micky5991/docker-php-base:latest-${{ matrix.image }}
 
       - name: Push docker image (No SemVer)
-        if: steps.get_version.outputs.is-semver != true
+        if: steps.get_version.outputs.is-semver != 'true'
         run: |
           docker push micky5991/docker-php-base:${{ needs.variables.outputs.ref }}-${{ matrix.image }}
 
