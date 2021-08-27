@@ -19,13 +19,14 @@ jobs:
       run:
         working-directory: ${{ github.workspace }}/${{ matrix.image }}/
 
-    matrix: 
-      image: 
-        - php7.4-cli
-        - php7.4-fpm
-        - php7.4-fpm-rendering
-        - php8.0-cli
-        - php8.0-fpm
+    strategy:
+      matrix: 
+        image: 
+          - php7.4-cli
+          - php7.4-fpm
+          - php7.4-fpm-rendering
+          - php8.0-cli
+          - php8.0-fpm
     
     steps: 
       - name: Checkout 
