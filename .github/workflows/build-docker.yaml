@@ -113,8 +113,12 @@ jobs:
           docker load --input /tmp/image.tar
           docker image ls -a
 
-      - name: Push docker image
+      - name: Retag docker image
         run: |
           docker tag micky5991/docker-php-base:latest-${{ matrix.image }} micky5991/docker-php-base:${{ needs.variables.outputs.ref }}-${{ matrix.image }}
           docker image ls -a
+
+      - name: Push docker image
+        run: |
+          docker push micky5991/docker-php-base:${{ needs.variables.outputs.ref }}-${{ matrix.image }}
 
