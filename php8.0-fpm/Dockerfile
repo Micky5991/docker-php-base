@@ -1,4 +1,4 @@
-FROM nginx:1.21
+FROM nginx:1.23
 
 RUN apt-get update && apt-get -y install apt-transport-https lsb-release ca-certificates wget
 RUN wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
