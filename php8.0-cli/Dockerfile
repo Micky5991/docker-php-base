@@ -1,7 +1,7 @@
-FROM composer:2.1 AS composer
+FROM composer:2.4 AS composer
 FROM php:8.0-cli
 
-RUN curl -sL https://deb.nodesource.com/setup_16.x | bash -
+RUN curl -sL https://deb.nodesource.com/setup_18.x | bash -
 
 RUN apt-get update \
     && apt-get install -y git zip unzip nodejs zlib1g-dev libzip-dev libicu-dev libgmp-dev \
