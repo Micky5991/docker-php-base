@@ -36,10 +36,10 @@ jobs:
       - id: vars
         name: Set variables
         run: |
-          echo ::set-output name=ref::${GITHUB_REF#refs/*/}
-          echo ::set-output name=is_tag::${{ startsWith(github.ref, 'refs/tags/') }}
-          echo ::set-output name=version::${{ steps.previoustag.outputs.tag }}
-          echo ::set-output name=sha_short::$(git rev-parse --short=8 ${{ github.sha }})
+          echo "ref=${GITHUB_REF#refs/*/}" >> $GITHUB_OUTPUT
+          echo "is_tag=${{ startsWith(github.ref, 'refs/tags/') }}" >> $GITHUB_OUTPUT
+          echo "version=${{ steps.previoustag.outputs.tag }}" >> $GITHUB_OUTPUT
+          echo "sha_short=$(git rev-parse --short=8 ${{ github.sha }})" >> $GITHUB_OUTPUT
 
   build:
     name: Build Image "${{ matrix.image }}"
