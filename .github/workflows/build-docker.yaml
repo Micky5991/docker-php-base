@@ -58,9 +58,9 @@ jobs:
           - php8.1-cli
           - php8.1-fpm
           - php8.1-fpm-rendering
-          #- php8.2-cli
-          #- php8.2-fpm
-          #- php8.2-fpm-rendering
+          - php8.2-cli
+          - php8.2-fpm
+          - php8.2-fpm-rendering
     
     steps: 
       - name: Checkout 
@@ -100,9 +100,9 @@ jobs:
           - php8.1-cli
           - php8.1-fpm
           - php8.1-fpm-rendering
-          #- php8.2-cli
-          #- php8.2-fpm
-          #- php8.2-fpm-rendering
+          - php8.2-cli
+          - php8.2-fpm
+          - php8.2-fpm-rendering
     
     steps: 
       - name: Checkout 
